@@ -55,7 +55,6 @@ class DemoView extends View {
 
 4. Create the Route file (ex. save it as demo.php)
 <pre>
-<?php
 require("base.php");
 require_once("$BASE_DIR/common.php");
 require_once("$BASE_DIR/classes/view/DemoView.php");
