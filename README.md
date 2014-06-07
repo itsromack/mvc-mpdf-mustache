@@ -29,7 +29,7 @@ root
 
 1. Extend from the PDF class, save it under <b>classes/pdf</b> folder
 <pre>
-class DemoPDF extends PDF {
+class PDFDemoReport extends PDF {
   ...
 }
 </pre>
@@ -51,4 +51,19 @@ class DemoView extends View {
 3. Create Template, save it under <b>html</b> folder (ex. save it as index.html)
 <pre>
 {{content}}
+</pre>
+
+4. Create the Route file (ex. save it as demo.php)
+<pre>
+<?php
+require("base.php");
+require_once("$BASE_DIR/common.php");
+require_once("$BASE_DIR/classes/view/DemoView.php");
+
+$pdf = new PDFDemoReport('en');
+$page = new DemoView($pdf);
+$content = $page->generateView();
+$pdf->setContent($content);
+$pdf->generatePDF();
+
 </pre>
