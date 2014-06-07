@@ -1,7 +1,6 @@
 <?php
 
 class PDFCustomReport extends PDF {
-    var $report_data;
 
     public function __construct($mode, $filename = false) {
         parent::__construct(array(
