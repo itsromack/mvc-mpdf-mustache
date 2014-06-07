@@ -59,11 +59,9 @@ class DemoView extends View {
 require("base.php");
 require_once("$BASE_DIR/common.php");
 require_once("$BASE_DIR/classes/view/DemoView.php");
-
 $pdf = new PDFDemoReport('en');
 $page = new DemoView($pdf);
 $content = $page->generateView();
 $pdf->setContent($content);
 $pdf->generatePDF();
-
 </pre>
